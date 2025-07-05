@@ -2,6 +2,7 @@
   "name": "3on",
   "private": true,
   "type": "module",
+  "version": "2.0.0",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
