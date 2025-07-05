@@ -1,4 +1,3 @@
-import CasesResidenciais from "./components/CasesResidenciais";
 import CTAResidencial from "./components/CTAResidencial";
 import HeroResidencial from "./components/HeroResidencial";
 import SimuladorAmbientes from "./components/SimuladorAmbientes";

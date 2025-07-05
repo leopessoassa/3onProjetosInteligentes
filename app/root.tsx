@@ -10,9 +10,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import { useEffect, useRef } from "react";
-import TagManager from "react-gtm-module";
-import { GTMPageTracker, GTMProvider } from "./providers/GTMProvider";
+import { GTMProvider } from "./providers/GTMProvider";
 
 export const links: Route.LinksFunction = () => [
   { rel: "canonical", href: "https://3on.com.br" },

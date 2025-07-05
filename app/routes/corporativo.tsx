@@ -1,5 +1,5 @@
-import { GTMPageTracker } from "~/providers/GTMProvider";
-/*import type { Route } from "./+types/corporativo";
+/*import { GTMPageTracker } from "~/providers/GTMProvider";
+import type { Route } from "./+types/corporativo";
 import CorporativoPage from "~/pages/Corporativo/CorporativoPage";
 
 export function meta({}: Route.MetaArgs) {

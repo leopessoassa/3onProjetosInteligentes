@@ -10,14 +10,6 @@ export interface IInputProps<T extends IModel> {
   rules?: any;
   labelClass?:string;
   inputClass?:string;
-  //size?: "sm" | "lg";
   disabled?: boolean;
-  //max?: string;
-  //maxLength?: number;
-  //min?: string;
-  //minLength?: number;
-  //name?: string;
-  //required?: boolean;
   type?: string;
-  //customMessage?: string;
 }

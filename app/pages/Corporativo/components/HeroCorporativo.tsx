@@ -1,5 +1,3 @@
-import { handleSmoothScroll } from "~/utils/ComponentUtils";
-
 function HeroCorporativo() {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary-dark to-blue-900 text-white overflow-hidden">

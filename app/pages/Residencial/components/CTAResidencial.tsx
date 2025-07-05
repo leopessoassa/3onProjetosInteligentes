@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import CalculadoraInvestimento from "~/components/CalculadoraInvestimento/CalculadoraInvestimento";
+import { useState } from "react";
 
 interface CalculatorData {
   tipoResidencia: string;
@@ -19,7 +18,7 @@ interface CalculatorResults {
 }
 
 const CTAResidencial = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  //const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>

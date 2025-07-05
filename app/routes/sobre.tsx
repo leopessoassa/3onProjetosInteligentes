@@ -1,5 +1,4 @@
 import type { Route } from "./+types/sobre";
-import { Welcome } from "../welcome/welcome";
 import { GTMPageTracker } from "~/providers/GTMProvider";
 
 export function meta({}: Route.MetaArgs) {
@@ -45,7 +44,6 @@ export default function Sobre() {
   return (
     <>
       <GTMPageTracker />
-      <Welcome />
     </>
   );
 }
