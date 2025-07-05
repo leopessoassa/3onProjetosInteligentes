@@ -1,0 +1,42 @@
+/* Modal animations */
+#calculatorModal .transform {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar for modal */
+#calculatorModal .overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+#calculatorModal .overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+#calculatorModal .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+#calculatorModal .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Smooth transitions */
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"]:checked {
+  background-color: currentColor;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #calculatorModal .max-w-4xl {
+    max-width: 95vw;
+  }
+}
