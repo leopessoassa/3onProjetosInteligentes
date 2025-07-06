@@ -30,11 +30,12 @@
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
+    "vite-plugin-vercel": "^9.0.7",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.44.2",
     "@esbuild/linux-x64": "^0.25.5",
+    "@rollup/rollup-linux-x64-gnu": "^4.44.2",
     "lightningcss-linux-x64-gnu": "^1.30.1"
   }
 }

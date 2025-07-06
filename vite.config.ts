@@ -2,7 +2,11 @@ import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import vercel from 'vite-plugin-vercel';
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  server: {
+    port: process.env.PORT as unknown as number,
+  },
+  plugins: [vercel(),tailwindcss(), reactRouter(), tsconfigPaths()],
 });
