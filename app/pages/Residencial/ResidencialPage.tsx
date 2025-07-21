@@ -1,3 +1,4 @@
+import CasesDestaque from "../Home/components/CasesDestaque";
 import CTAResidencial from "./components/CTAResidencial";
 import HeroResidencial from "./components/HeroResidencial";
 import SimuladorAmbientes from "./components/SimuladorAmbientes";
@@ -20,6 +21,8 @@ function ResidencialPage() {
       {/* Cases Residenciais
       <CasesResidenciais />
       */}
+
+      <CasesDestaque />      
 
       {/* CTA Final*/}
       <CTAResidencial />

@@ -1,4 +1,5 @@
 
+import CasesDestaque from "./components/CasesDestaque";
 import HeroHome from "./components/HeroHome";
 import MetricasImpacto from "./components/MetricasImpacto";
 import "./HomePage.css";
@@ -13,9 +14,9 @@ function HomePage() {
       {/* Métricas de Impacto */}
       <MetricasImpacto />
 
-      {/* Cases em Destaque 
+      {/* Cases em Destaque */}
       <CasesDestaque />
-      */}
+      
       <HomeStructuredData />
     </>
   );
