@@ -1,4 +1,13 @@
+import { trackEvent } from "../Analytics";
+
 export default function HeroSection() {
+  const handleCTAClick = (ctaType: string) => {
+    trackEvent('cta_click', {
+      cta_location: 'hero',
+      cta_type: ctaType
+    });
+  };
+
   return (
     <section className="gradient-hero text-white py-20 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
@@ -40,12 +49,14 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="#contato" 
+              onClick={() => handleCTAClick('primary')}
               className="gradient-cta hover:bg-accent-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-elegant hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
             >
               Café na praia para falar do próximo projeto?
             </a>
             <a 
               href="#processo" 
+              onClick={() => handleCTAClick('secondary')}
               className="border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 w-full sm:w-auto"
             >
               Como funciona
