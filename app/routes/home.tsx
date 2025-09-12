@@ -1,6 +1,9 @@
 import type { MetaFunction } from "react-router";
 import HeroSection from "~/components/sections/HeroSection";
 import ParaArquitetosSection from "~/components/sections/ParaArquitetosSection";
+import ComoFuncionaSection from "~/components/sections/ComoFuncionaSection";
+import CasesReaisSection from "~/components/sections/CasesReaisSection";
+import SobreLeoSection from "~/components/sections/SobreLeoSection";
 
 export const meta: MetaFunction = () => {
   return [
@@ -21,44 +24,11 @@ export default function Home() {
 
       <ParaArquitetosSection />
 
-      {/* Sobre Leo */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Sobre Leo Pessoa</h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-left">
-                <h3 className="text-2xl font-semibold mb-4">Credibilidade Técnica + Visão Comercial</h3>
-                <ul className="space-y-3 text-lg">
-                  <li className="flex items-center">
-                    <span className="text-primary-600 mr-3">🎓</span>
-                    Engenheiro Eletricista + Analista de Sistemas
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-primary-600 mr-3">🏆</span>
-                    MBA Gestão Empresarial (FGV)
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-primary-600 mr-3">💻</span>
-                    Especialista em BIM e AutoCAD
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-primary-600 mr-3">🏠</span>
-                    Automação Residencial Inteligente
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-primary-600 mr-3">📍</span>
-                    João Pessoa - PB
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-secondary-100 h-64 rounded-lg flex items-center justify-center shadow-elegant">
-                <span className="text-secondary-500">Foto do Leo</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ComoFuncionaSection />
+
+      <CasesReaisSection />
+
+      <SobreLeoSection />
 
       {/* Contato */}
       <section id="contato" className="py-16 bg-primary-900 text-white">

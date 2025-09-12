@@ -23,6 +23,14 @@ export default function ParaArquitetosSection() {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+                <span className="text-red-500 text-xl">😴</span>
+                <p className="text-secondary-700">"Projetos genéricos podem estagnar minha carreira"</p>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+                <span className="text-red-500 text-xl">🙄</span>
+                <p className="text-secondary-700">"Cliente acha automação 'fútil' e corta do orçamento"</p>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
                 <span className="text-red-500 text-xl">😤</span>
                 <p className="text-secondary-700">"Cliente quer automação, mas não sei por onde começar"</p>
               </div>
@@ -33,15 +41,7 @@ export default function ParaArquitetosSection() {
               <div className="flex items-start gap-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
                 <span className="text-red-500 text-xl">⏰</span>
                 <p className="text-secondary-700">"Obra atrasou por problemas na instalação elétrica"</p>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
-                <span className="text-red-500 text-xl">🙄</span>
-                <p className="text-secondary-700">"Cliente acha automação 'fútil' e corta do orçamento"</p>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
-                <span className="text-red-500 text-xl">😴</span>
-                <p className="text-secondary-700">"Projetos genéricos podem estagnar minha carreira"</p>
-              </div>
+              </div>              
             </div>
           </div>
           
@@ -51,6 +51,20 @@ export default function ParaArquitetosSection() {
               ✅ Como eu resolvo para você:
             </h3>
             <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-success-50 rounded-lg border-l-4 border-success-400">
+                <span className="text-success-600 text-xl">🎆</span>
+                <div>
+                  <h4 className="font-semibold text-secondary-800">Projetos que Impressionam</h4>
+                  <p className="text-secondary-600">Diferencial que eleva sua carreira</p>
+                </div>
+              </div>              
+              <div className="flex items-start gap-4 p-4 bg-primary-50 rounded-lg border-l-4 border-primary-400">
+                <span className="text-primary-600 text-xl">📊</span>
+                <div>
+                  <h4 className="font-semibold text-secondary-800">ROI Demonstrável</h4>
+                  <p className="text-secondary-600">Mostro valorização real do imóvel</p>
+                </div>
+              </div>
               <div className="flex items-start gap-4 p-4 bg-success-50 rounded-lg border-l-4 border-success-400">
                 <span className="text-success-600 text-xl">💰</span>
                 <div>
@@ -71,21 +85,7 @@ export default function ParaArquitetosSection() {
                   <h4 className="font-semibold text-secondary-800">Suporte Comercial</h4>
                   <p className="text-secondary-600">Te ajudo a convencer o cliente</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-primary-50 rounded-lg border-l-4 border-primary-400">
-                <span className="text-primary-600 text-xl">📊</span>
-                <div>
-                  <h4 className="font-semibold text-secondary-800">ROI Demonstrável</h4>
-                  <p className="text-secondary-600">Mostro valorização real do imóvel</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-success-50 rounded-lg border-l-4 border-success-400">
-                <span className="text-success-600 text-xl">🎆</span>
-                <div>
-                  <h4 className="font-semibold text-secondary-800">Projetos que Impressionam</h4>
-                  <p className="text-secondary-600">Diferencial que eleva sua carreira</p>
-                </div>
-              </div>
+              </div>              
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function ParaArquitetosSection() {
               🔧 Diferencial Técnico que Importa
             </h3>
             <p className="text-lg text-secondary-600">
-              Não é só mais um eletricista. É integração total com seu workflow.
+              Não é só mais um engenheiro. É integração total com seu workflow.
             </p>
           </div>
           
