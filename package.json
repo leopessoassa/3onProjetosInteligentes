@@ -1,8 +1,8 @@
 {
-  "name": "3on",
+  "name": "leopessoa-eng",
   "private": true,
   "type": "module",
-  "version": "2.0.4",
+  "version": "1.0.0",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
