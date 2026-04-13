@@ -1,0 +1,167 @@
+.section {
+  background: #f4f4f2;
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* Foto */
+.imageCol {
+  flex: 0 0 340px;
+}
+
+.photoWrap {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Conteúdo */
+.contentCol {
+  flex: 1;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--entry-accent, #c8a96e);
+  margin: 0 0 12px;
+}
+
+.title {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--entry-bg-deep, #1c1c1e);
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.titleLine {
+  width: 40px;
+  height: 2px;
+  background: var(--entry-accent, #c8a96e);
+  margin-bottom: 28px;
+}
+
+/* Missão */
+.missao {
+  margin: 0 0 36px;
+  padding: 0 0 0 20px;
+  border-left: 2px solid var(--entry-accent, #c8a96e);
+}
+
+.missao p {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Diferenciais */
+.diferencialList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.diferencialItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e6e2;
+}
+
+.diferencialItem:last-child {
+  border-bottom: none;
+}
+
+.num {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--entry-accent, #c8a96e);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+  letter-spacing: -1px;
+  opacity: 0.7;
+}
+
+.diferencialTitle {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.diferencialDesc {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.credenciais {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 0;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 991px) {
+  .grid {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .imageCol {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .container { padding: 0 24px; }
+  .title { font-size: 36px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 56px 0; }
+  .container { padding: 0 20px; }
+}

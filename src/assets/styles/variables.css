@@ -1,0 +1,109 @@
+/* CSS Custom Properties extracted from the Ingenious template */
+
+:root {
+  /* ── B2C palette (casainteligente — verde) ─────────────────────────────── */
+  --color-primary: #59ab66;       /* main green */
+  --color-primary-dark: #529b6b;  /* darker green */
+  --color-accent: #fcb43c;        /* amber accent — brand color */
+  --color-blue: #00bdbd;          /* teal blue — standardized UI accent */
+
+  /* ── Entrada palette (leopessoa.eng.br — chumbo quente) ───────────────── */
+  /* Fundos e overlays de seção */
+  --entry-bg-deep:    #1c1c1e;      /* chumbo quase preto — hero/footer */
+  --entry-bg-section: #242426;      /* fundo padrão de seção escura */
+  --entry-bg-overlay: rgba(28, 28, 30, 0.88);
+  --entry-bg-card:    rgba(255, 255, 255, 0.07);
+  --entry-bg-card-hover: rgba(255, 255, 255, 0.12);
+
+  --entry-overlay-section: rgba(28, 28, 30, 0.92);
+
+  /* Accent âmbar suave — entre o dourado B2B e o laranja B2C */
+  --entry-accent:      #c8a96e;     /* dourado bege — neutro entre os dois filhos */
+  --entry-accent-dark: #a88a50;
+  --entry-accent-bg:   rgba(200, 169, 110, 0.15);
+
+  /* Texto sobre fundo escuro */
+  --entry-text-primary:   #ffffff;
+  --entry-text-secondary: rgba(255, 255, 255, 0.72);
+  --entry-text-muted:     rgba(255, 255, 255, 0.45);
+
+  /* Bordas e separadores */
+  --entry-border:       rgba(255, 255, 255, 0.10);
+  --entry-border-light: rgba(255, 255, 255, 0.05);
+
+  /* CTAs de direcionamento — usam as cores dos sites de destino */
+  --entry-cta-b2b:      #d4a843;   /* dourado B2B — card "Sou Parceiro" */
+  --entry-cta-b2b-bg:   rgba(212, 168, 67, 0.15);
+  --entry-cta-b2c:      #59ab66;   /* verde B2C — card "Sou Cliente" */
+  --entry-cta-b2c-bg:   rgba(89, 171, 102, 0.15);
+
+  /* ── B2B palette (parceiros — azul petróleo) ───────────────────────────── */
+  /* Mantidas para compatibilidade — usadas apenas no site parceiros */
+  --b2b-bg-deep:    #0b1f2a;
+  --b2b-bg-section: #0f2535;
+  --b2b-bg-overlay: rgba(11, 31, 42, 0.88);
+  --b2b-bg-card:    rgba(255, 255, 255, 0.07);
+  --b2b-bg-card-hover: rgba(255, 255, 255, 0.12);
+  --b2b-overlay-section: rgba(11, 31, 42, 0.92);
+  --b2b-accent:      #d4a843;
+  --b2b-accent-dark: #b8902e;
+  --b2b-accent-bg:   rgba(212, 168, 67, 0.15);
+  --b2b-text-primary:  #ffffff;
+  --b2b-text-secondary: rgba(255, 255, 255, 0.75);
+  --b2b-text-muted:     rgba(255, 255, 255, 0.50);
+  --b2b-border:       rgba(255, 255, 255, 0.12);
+  --b2b-border-light: rgba(255, 255, 255, 0.06);
+  --b2b-cta-green:   #59ab66;
+  --b2b-cta-green-dark: #4a9457;
+
+  /* WhatsApp — mantido universal */
+  --color-whatsapp:  #25d366;
+  --color-whatsapp-dark: #1ebe5d;
+
+  /* ── Cores compartilhadas ──────────────────────────────────────────────── */
+  --color-text: #363636;          /* body text */
+  --color-text-muted: #4b4342;    /* muted text */
+  --color-white: #ffffff;
+  --color-bg: #ffffff;
+  --color-border: #e0e6ea;
+  --color-border-light: #f1f1f1;
+  --color-sky: #009de6;
+  --color-purple: #6770b9;
+  --color-pink: #fa3138;
+  --color-orange: #f87208;
+  --color-caribbean: #03c8ad;
+  --color-dark: #464646;
+  --color-success: #59ab66;
+  --color-warning: #fad10f;
+  --color-error: #f3413f;
+  --color-info: #2f94ce;
+
+  /* Typography */
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Catamaran', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 28px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 40px;
+  --spacing-xxl: 50px;
+
+  /* Container */
+  --container-max-width: 1200px;
+  --container-padding: 15px;
+
+  /* Border radius */
+  --border-radius-pill: 30px;
+
+  /* Transitions */
+  --transition-base: all 0.5s ease;
+  --transition-fast: all 300ms ease;
+}
