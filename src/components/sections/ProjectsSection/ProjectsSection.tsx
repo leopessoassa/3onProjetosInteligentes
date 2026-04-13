@@ -29,8 +29,8 @@ const projects: Project[] = [
     image: '/images/projeto-residencial-cond.-ville-cristal-gravata-pe.webp',
     imageAlt: 'Residência Alto Padrão no Condomínio Ville Cristal — Gravatá, PE',
     specs: [
-      { label: 'Área', value: '400m²' },
-      { label: 'Circuitos', value: '70' },
+      { label: 'Área', value: '600m²' },
+      { label: 'Circuitos', value: '144' },
       { label: 'Tecnologia', value: 'Cabeada' },
     ],
     tags: ['Projeto Elétrico', 'Automação', 'Iluminação', 'Persianas', 'Som Ambiente', 'Climatização', 'Rede Wifi'],
@@ -45,7 +45,7 @@ const projects: Project[] = [
     imageAlt: 'Residência Alto Padrão no Condomínio Alphaville Paraíba — Bayeux, PB',
     specs: [
       { label: 'Área', value: '220m²' },
-      { label: 'Circuitos', value: '35' },
+      { label: 'Circuitos', value: '65' },
       { label: 'Tecnologia', value: 'Cabeada' },
     ],
     tags: ['Projeto Elétrico', 'Automação', 'Iluminação', 'Persianas', 'Som Ambiente', 'Climatização', 'Segurança'],

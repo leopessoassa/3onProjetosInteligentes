@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       className={styles.hero}
-      style={{ backgroundImage: 'url(/images/equipamentos-eletricos-sobre-projeto-v5.webp)' }}
+      style={{ backgroundImage: 'url(/images/main-slider/1.webp)'}}
       aria-label="Leo Pessoa — Engenheiro Eletricista"
     >
       <div className={styles.overlay} aria-hidden="true" />
