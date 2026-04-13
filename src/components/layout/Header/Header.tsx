@@ -8,37 +8,41 @@ function NavList({ onItemClick }: { onItemClick?: () => void }) {
   return (
     <ul className="navigation clearfix">
       {navItems.map((item) => {
+        // Pill âmbar sólido — "Para Parceiros" (ação principal)
         if (item.isCta) {
           return (
             <li key={item.label} className={styles.ctaItem}>
               <a
                 href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.ctaBtn}
                 onClick={onItemClick}
               >
-                {item.label}
+                {item.label} →
               </a>
             </li>
           );
         }
 
-        if (item.isExternal) {
+        // Sublinhado âmbar — "Para Clientes" (ação secundária)
+        if (item.isClientLink) {
           return (
-            <li key={item.label} className={styles.partnerItem}>
+            <li key={item.label} className={styles.clientItem}>
               <a
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.partnerLink}
+                className={styles.clientLink}
                 onClick={onItemClick}
               >
-                {item.label}
-                <i className="fa fa-external-link-alt" aria-hidden="true" />
+                {item.label} ↗
               </a>
             </li>
           );
         }
 
+        // Link interno normal
         return (
           <li key={item.label}>
             <a href={item.href} onClick={onItemClick}>

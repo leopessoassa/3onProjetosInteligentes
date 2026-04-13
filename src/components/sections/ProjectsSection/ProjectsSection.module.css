@@ -358,7 +358,7 @@
 }
 
 @media (max-width: 768px) {
-  .section { margin-top: -60px; padding: 110px 0 0; }
+  .section { margin-top: -60px; padding: 110px 0 120px; }
   .featured { grid-template-columns: 1fr; }
   .featuredImg { min-height: 260px; }
   .featuredContent {
@@ -376,7 +376,7 @@
 }
 
 @media (max-width: 480px) {
-  .section { margin-top: -40px; padding: 120px 0 0; }
+  .section { margin-top: -60px; padding: 120px 0 120px; }
   .secondaryCard { grid-template-columns: 1fr; }
   .secondaryImg { min-height: 200px; height: 200px; }
   .secondaryContent {

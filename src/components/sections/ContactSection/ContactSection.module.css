@@ -264,8 +264,8 @@ a.contatoItem:hover {
 }
 
 .submitBtn {
-  background: var(--entry-accent, #c8a96e);
-  color: var(--entry-bg-deep, #1c1c1e);
+  background: var(--b2b-accent, #d4a843);
+  color: var(--b2b-bg-deep, #0b1f2a);
   font-family: 'Catamaran', sans-serif;
   font-size: 13px;
   font-weight: 700;
@@ -280,7 +280,7 @@ a.contatoItem:hover {
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: var(--entry-accent-dark, #a88a50);
+  background: var(--b2b-accent-dark, #b8902e);
   transform: translateY(-1px);
 }
 
@@ -299,7 +299,7 @@ a.contatoItem:hover {
 
 .successIcon {
   font-size: 24px;
-  color: var(--entry-accent, #c8a96e);
+  color: var(--b2b-accent, #d4a843);
   flex-shrink: 0;
 }
 
@@ -328,7 +328,7 @@ a.contatoItem:hover {
 }
 
 @media (max-width: 768px) {
-  .section { margin-top: -60px; padding: 110px 0 72px; }
+  .section { margin-top: -130px; padding: 130px 0 72px; }
   .container { padding: 0 24px; }
   .headline { font-size: 32px; }
   .formWrap { padding: 28px 24px; }
@@ -336,7 +336,7 @@ a.contatoItem:hover {
 }
 
 @media (max-width: 480px) {
-  .section { margin-top: -40px; padding: 100px 0 56px; }
+  .section { margin-top: -130px; padding: 130px 0 56px; }
   .container { padding: 0 20px; }
   .headline { font-size: 26px; }
 }
