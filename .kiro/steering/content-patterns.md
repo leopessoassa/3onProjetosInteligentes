@@ -136,7 +136,7 @@ Editar diretamente o JSX:
 // Exemplo de contato:
 <li>
   <i className="far fa-envelope" aria-hidden="true" />
-  <a href="mailto:leo@leopessoa.com.br">leo@leopessoa.com.br</a>
+  <a href="mailto:contato@leopessoa.eng.br">contato@leopessoa.eng.br</a>
 </li>
 <li>
   <i className="fa fa-phone" aria-hidden="true" />

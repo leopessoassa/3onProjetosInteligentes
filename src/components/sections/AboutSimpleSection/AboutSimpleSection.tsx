@@ -4,7 +4,7 @@ const diferenciais = [
   {
     id: '01',
     title: 'Projetos Elétricos',
-    desc: 'AutoCAD 2D e Revit BIM 3D. Compatibilidade total com projetos arquitetônicos.',
+    desc: 'AutoCAD e BIM. Compatibilidade total com projetos arquitetônicos.',
   },
   {
     id: '02',

@@ -64,9 +64,9 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:leo@leopessoa.eng.br" className={styles.contatoLink}>
+                  <a href="mailto:contato@leopessoa.eng.br" className={styles.contatoLink}>
                     <span className={styles.contatoLabel}>Email</span>
-                    <span className={styles.contatoValue}>leo@leopessoa.eng.br</span>
+                    <span className={styles.contatoValue}>contato@leopessoa.eng.br</span>
                   </a>
                 </li>
                 <li className={styles.contatoStatic}>

@@ -1,8 +1,8 @@
 import styles from './StatsSection.module.css';
 
 const stats = [
-  { stat: '150+', desc: 'Cômodos entregues', sub: 'Residenciais e corporativos' },
-  { stat: '100+', desc: 'Clientes satisfeitos', sub: 'Taxa de satisfação 98%' },
+  { stat: '95+', desc: 'Cômodos entregues', sub: 'Residenciais e corporativos' },
+  { stat: '30+', desc: 'Clientes satisfeitos', sub: 'Taxa de satisfação 98%' },
   { stat: '12',   desc: 'Anos de experiência', sub: 'Inovação constante' },
 ];
 

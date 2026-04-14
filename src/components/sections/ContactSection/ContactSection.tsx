@@ -6,7 +6,7 @@ import styles from './ContactSection.module.css';
 
 const contatos = [
   { label: 'WhatsApp', value: WHATSAPP_DISPLAY, isWhatsapp: true },
-  { label: 'Email',    value: 'leo@leopessoa.eng.br', href: 'mailto:leo@leopessoa.eng.br' },
+  { label: 'Email',    value: 'contato@leopessoa.eng.br', href: 'mailto:contato@leopessoa.eng.br' },
   { label: 'Local',    value: 'João Pessoa — PB' },
 ];
 
