@@ -10,6 +10,9 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="author" content="Leonardo Pessoa">
     <link rel="canonical" href="https://leopessoa.eng.br/">
+    <meta name="geo.region" content="BR-PB">
+    <meta name="geo.placename" content="João Pessoa">
+  
 
     <!-- ═══ Open Graph (WhatsApp, Facebook, LinkedIn) ════════════════════════ -->
     <meta property="og:type" content="website">
@@ -35,7 +38,7 @@
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://leopessoa.eng.br/#person",
+          "@id": "https://leopessoa.eng.br/#sobre",
           "name": "Leonardo Pessoa",
           "jobTitle": "Engenheiro Eletricista",
           "description": "Engenheiro Eletricista especialista em automação residencial, projetos elétricos, iluminação inteligente e SPDA. Parceiro técnico para arquitetos e designers de interiores em João Pessoa, PB.",
@@ -48,7 +51,8 @@
           ],
           "hasCredential": [
             { "@type": "EducationalOccupationalCredential", "name": "CREA-PB" },
-            { "@type": "EducationalOccupationalCredential", "name": "MBA FGV" }
+            { "@type": "EducationalOccupationalCredential", "name": "MBA FGV" },
+            { "@type": "EducationalOccupationalCredential", "name": "Mestrado UFPB" }
           ]
         },
         {
@@ -58,7 +62,7 @@
           "description": "Automação residencial, projetos elétricos, iluminação inteligente e SPDA em João Pessoa, PB.",
           "url": "https://leopessoa.eng.br",
           "telephone": "+5583982078702",
-          "email": "leo@leopessoa.eng.br",
+          "email": "contato@leopessoa.eng.br",
           "image": "https://leopessoa.eng.br/images/leonardo-pessoa.webp",
           "priceRange": "$$",
           "address": {
@@ -69,8 +73,8 @@
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": -7.1195,
-            "longitude": -34.8450
+            "latitude": -7.1253137,
+            "longitude": -34.853303
           },
           "areaServed": [
             { "@type": "City", "name": "João Pessoa" },
@@ -87,16 +91,26 @@
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parceria com Arquitetos" } }
             ]
           },
-          "founder": { "@id": "https://leopessoa.eng.br/#person" }
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          "founder": { "@id": "https://leopessoa.eng.br/#sobre" }
         },
         {
           "@type": "WebSite",
-          "@id": "https://leopessoa.eng.br/#website",
+          "@id": "https://leopessoa.eng.br/",
           "url": "https://leopessoa.eng.br",
           "name": "Leo Pessoa · Engenheiro Eletricista",
           "description": "Site institucional de Leonardo Pessoa, Engenheiro Eletricista em João Pessoa, PB.",
-          "publisher": { "@id": "https://leopessoa.eng.br/#person" },
-          "inLanguage": "pt-BR"
+          "publisher": { "@id": "https://leopessoa.eng.br/#sobre" },
+          "inLanguage": "pt-BR",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["title", "meta[name='description']"]
+          }
         }
       ]
     }
@@ -120,11 +134,16 @@
     <meta name="msapplication-TileColor" content="#1c1c1e">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#1c1c1e">
+    <meta name="format-detection" content="telephone=no">
 
+    <!-- ═══ Fontes (otimizado: apenas pesos usados) ══════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@400;600;700;800&family=Roboto:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@400;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+    <!-- ═══ Font Awesome (carregamento assíncrono — não bloqueia renderização) ═ -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /></noscript>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQZZV2N3N3"></script>
