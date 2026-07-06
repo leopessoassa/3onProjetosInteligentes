@@ -42,6 +42,23 @@ function NavList({ onItemClick }: { onItemClick?: () => void }) {
           );
         }
 
+        // Sublinhado azul elétrico — "KPRemote IoT" (terceiro destino)
+        if (item.isIotLink) {
+          return (
+            <li key={item.label} className={styles.iotItem}>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.iotLink}
+                onClick={onItemClick}
+              >
+                {item.label} ↗
+              </a>
+            </li>
+          );
+        }
+
         // Link interno normal
         return (
           <li key={item.label}>

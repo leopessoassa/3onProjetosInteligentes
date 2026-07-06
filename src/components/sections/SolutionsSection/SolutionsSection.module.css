@@ -1,0 +1,316 @@
+/* ══════════════════════════════════════════════════════
+   SolutionsSection — leopessoa.eng.br
+   Fundo: branco (#fff)
+   Transição: About claro (#f4f4f2) → Solutions branco (#fff)
+   Mobile-first: coluna única → 3 colunas em desktop
+   ══════════════════════════════════════════════════════ */
+
+.section {
+  position: relative;
+  margin-top: -40px;
+  padding-top: 40px;
+  padding-bottom: 80px;   /* protege conteúdo do final — a próxima seção avança 40px por cima */
+  z-index: 3;
+}
+
+/* Fundo branco começa abaixo dos triângulos */
+.section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100%;
+  height: calc(100% - 40px);
+  background-color: #fff;
+  z-index: -1;
+}
+
+/* ── Background layers ───────────────────────────────── */
+.backgroundLayers {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+/*
+ * Triângulo branco (#fff) sobre fundo claro (#f4f4f2).
+ * A diferença de tom é sutil mas visível — cria a ponta geométrica.
+ */
+.imageBg {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: #fff;
+  clip-path: polygon(0% 40px, 55% 0%, 100% 40px, 100% 100%, 50% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 40px, 55% 0%, 100% 40px, 100% 100%, 50% 100%, 0% 100%);
+}
+
+/* Triângulo decorativo — toque âmbar */
+.triangleOverlay {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  clip-path: polygon(55% 0%, 100% 40px, 100% 0%);
+  -webkit-clip-path: polygon(55% 0%, 100% 40px, 100% 0%);
+  background: rgba(200, 169, 110, 0.08);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Cabeçalho ───────────────────────────────────────── */
+.header {
+  max-width: 600px;
+  margin: 0 auto 48px;
+  text-align: center;
+  padding-top: 48px; /* respiro abaixo do triângulo */
+}
+
+.eyebrow {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--entry-accent, #c8a96e);
+  margin: 0 0 12px;
+}
+
+.title {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--entry-bg-deep, #1c1c1e);
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.titleLine {
+  width: 36px;
+  height: 2px;
+  background: var(--entry-accent, #c8a96e);
+  margin: 0 auto 20px;
+}
+
+.intro {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════
+   Grid — mobile: coluna única, desktop: 3 colunas
+   ══════════════════════════════════════════════════════ */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ══════════════════════════════════════════════════════
+   Card — link clicável, layout flex coluna
+   ══════════════════════════════════════════════════════ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 32px 28px 0;
+  border: 1px solid #e8e6e2;
+  border-top-width: 3px;        /* linha colorida no topo — cor por variante */
+  border-radius: 2px;
+  text-decoration: none;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Cores da borda topo por variante */
+.card-b2c { border-top-color: var(--entry-cta-b2c, #59ab66); }
+.card-b2b { border-top-color: var(--entry-cta-b2b, #d4a843); }
+.card-iot  { border-top-color: var(--entry-cta-iot, #00a8e8); }
+
+/* ── Ícone ───────────────────────────────────────────── */
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.iconWrap-b2c { background: rgba(89, 171, 102, 0.12); color: var(--entry-cta-b2c, #59ab66); }
+.iconWrap-b2b { background: rgba(212, 168, 67, 0.12); color: var(--entry-cta-b2b, #d4a843); }
+.iconWrap-iot  { background: rgba(0, 168, 232, 0.12); color: var(--entry-cta-iot, #00a8e8); }
+
+/* ── Conteúdo ────────────────────────────────────────── */
+.cardContent {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.cardEyebrow {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.eyebrow-b2c { color: var(--entry-cta-b2c, #59ab66); }
+.eyebrow-b2b { color: var(--entry-cta-b2b, #d4a843); }
+.eyebrow-iot  { color: var(--entry-cta-iot, #00a8e8); }
+
+.cardTitle {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+/* ── Bullets ─────────────────────────────────────────── */
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.bulletDot {
+  display: block;
+  width: 12px;
+  height: 1px;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.dot-b2c { background: var(--entry-cta-b2c, #59ab66); }
+.dot-b2b { background: var(--entry-cta-b2b, #d4a843); }
+.dot-iot  { background: var(--entry-cta-iot, #00a8e8); }
+
+/* ── CTA — rodapé do card, sempre ao fundo ───────────── */
+.cardCta {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 16px 0 20px;
+  border-top: 1px solid #e8e6e2;
+  margin-top: auto;
+  transition: letter-spacing 0.2s ease;
+}
+
+.card:hover .cardCta {
+  letter-spacing: 0.8px;
+}
+
+.cta-b2c { color: var(--entry-cta-b2c, #59ab66); }
+.cta-b2b { color: var(--entry-cta-b2b, #d4a843); }
+.cta-iot  { color: var(--entry-cta-iot, #00a8e8); }
+
+/* ══════════════════════════════════════════════════════
+   Tablet (600px+)
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 600px) {
+  .title { font-size: 40px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   Tablet largo (768px+) — triângulos maiores
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .section { margin-top: -80px; padding-top: 80px; padding-bottom: 120px; }  /* pb = 60px overlap + 60px respiro */
+  .section::before { top: 80px; height: calc(100% - 80px); }
+
+  .imageBg {
+    clip-path: polygon(0% 80px, 55% 20px, 100% 80px, 100% 100%, 50% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 80px, 55% 20px, 100% 80px, 100% 100%, 50% 100%, 0% 100%);
+  }
+  .triangleOverlay {
+    clip-path: polygon(55% 20px, 100% 80px, 100% 0%);
+    -webkit-clip-path: polygon(55% 20px, 100% 80px, 100% 0%);
+  }
+
+  .header { padding-top: 56px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   Desktop (992px+) — triângulos cheios, 3 colunas
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 992px) {
+  .section { margin-top: -190px; padding-top: 190px; padding-bottom: 150px; }  /* pb = 75px overlap + 75px respiro */
+  .section::before { top: 120px; height: calc(100% - 120px); }
+
+  .imageBg {
+    clip-path: polygon(0% 120px, 60% 60px, 100% 120px, 100% 100%, 50% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 120px, 60% 60px, 100% 120px, 100% 100%, 50% 100%, 0% 100%);
+  }
+  .triangleOverlay {
+    clip-path: polygon(60% 60px, 100% 0%, 100% 120px);
+    -webkit-clip-path: polygon(60% 60px, 100% 0%, 100% 120px);
+  }
+
+  .section { padding-bottom: 112px; }  /* pb 112px = 75px overlap + 37px respiro */
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .header { margin-bottom: 64px; padding-top: 80px; }
+  .title  { font-size: 44px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   Acessibilidade — foco visível
+   ══════════════════════════════════════════════════════ */
+.card:focus-visible {
+  outline: 2px solid var(--entry-accent, #c8a96e);
+  outline-offset: 3px;
+}

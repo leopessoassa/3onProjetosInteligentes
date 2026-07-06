@@ -56,6 +56,19 @@ export default function HeroSection() {
                 <span className={styles.profileCardDesc}>Arquiteto ou designer</span>
                 <span className={styles.profileCardArrowB2B} aria-hidden="true">→</span>
               </a>
+
+              <a
+                href="https://iot.leopessoa.eng.br"
+                className={`${styles.profileCard} ${styles.profileCardIoT}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sou empresa — ir para iot.leopessoa.eng.br"
+              >
+                <i className="fas fa-satellite-dish" aria-hidden="true" />
+                <span className={styles.profileCardTitle}>Sou Empresa</span>
+                <span className={styles.profileCardDesc}>Freezers e câmaras frias</span>
+                <span className={styles.profileCardArrowIoT} aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
 

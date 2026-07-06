@@ -1,29 +1,36 @@
+/* ══════════════════════════════════════════════════════
+   AboutSimpleSection — mobile-first
+   ══════════════════════════════════════════════════════ */
+
 .section {
   background: #f4f4f2;
-  padding: 100px 0;
+  padding: 56px 0 96px;  /* pb 96px = 40px overlap + 56px respiro */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
+/* Mobile: coluna única — foto acima, conteúdo abaixo */
 .grid {
   display: flex;
-  gap: 80px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 36px;
 }
 
-/* Foto */
+/* ── Foto ────────────────────────────────────────────── */
 .imageCol {
-  flex: 0 0 340px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .photoWrap {
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
 }
 
 .photo {
@@ -33,7 +40,7 @@
   object-fit: cover;
 }
 
-/* Conteúdo */
+/* ── Conteúdo ────────────────────────────────────────── */
 .contentCol {
   flex: 1;
   min-width: 0;
@@ -41,90 +48,89 @@
 
 .eyebrow {
   font-family: 'Catamaran', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--entry-accent, #c8a96e);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
+  display: block;
 }
 
+/* Título — mobile: 28px */
 .title {
   font-family: 'Catamaran', sans-serif;
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 900;
   color: var(--entry-bg-deep, #1c1c1e);
-  margin: 0 0 16px;
-  letter-spacing: -1px;
-  line-height: 1;
+  margin: 0 0 14px;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
 }
 
 .titleLine {
-  width: 40px;
+  width: 36px;
   height: 2px;
   background: var(--entry-accent, #c8a96e);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
-/* Missão */
+/* ── Missão ──────────────────────────────────────────── */
 .missao {
-  margin: 0 0 36px;
-  padding: 0 0 0 20px;
+  margin: 0 0 28px;
+  padding: 0 0 0 18px;
   border-left: 2px solid var(--entry-accent, #c8a96e);
 }
 
 .missao p {
-  font-size: 16px;
+  font-size: 15px;
   color: #555;
   font-style: italic;
-  line-height: 1.75;
+  line-height: 1.7;
   margin: 0;
 }
 
-/* Diferenciais */
+/* ── Diferenciais ────────────────────────────────────── */
 .diferencialList {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px;
+  margin: 0 0 24px;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .diferencialItem {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px 0;
+  gap: 16px;
+  padding: 16px 0;
   border-bottom: 1px solid #e8e6e2;
 }
 
-.diferencialItem:last-child {
-  border-bottom: none;
-}
+.diferencialItem:last-child { border-bottom: none; }
 
 .num {
   font-family: 'Catamaran', sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 900;
   color: var(--entry-accent, #c8a96e);
   line-height: 1;
   flex-shrink: 0;
-  width: 40px;
+  width: 36px;
   letter-spacing: -1px;
   opacity: 0.7;
 }
 
 .diferencialTitle {
   font-family: 'Catamaran', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 4px;
+  margin: 0 0 3px;
 }
 
 .diferencialDesc {
-  font-size: 14px;
+  font-size: 13px;
   color: #777;
   margin: 0;
   line-height: 1.55;
@@ -132,7 +138,7 @@
 
 .credenciais {
   font-family: 'Catamaran', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -140,28 +146,54 @@
   margin: 0;
 }
 
-/* ── Responsivo ── */
-@media (max-width: 991px) {
+/* ══════════════════════════════════════════════════════
+   Tablet (480px+)
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 480px) {
+  .title { font-size: 32px; }
+  .section { padding: 64px 0 104px; }  /* pb 104px = 80px overlap@768 + 24px respiro */
+}
+
+/* ══════════════════════════════════════════════════════
+   Tablet largo (768px+)
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .section    { padding: 80px 0 120px; }  /* pb 120px = 80px overlap + 40px respiro */
+  .container  { padding: 0 32px; }
+  .title      { font-size: 36px; }
+  .eyebrow    { font-size: 11px; }
+  .missao p   { font-size: 16px; }
+  .diferencialTitle { font-size: 15px; }
+  .diferencialDesc  { font-size: 14px; }
+  .num        { font-size: 28px; width: 40px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   Desktop (992px+) — foto e conteúdo lado a lado
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 992px) {
+  .section   { padding: 100px 0 240px; }  /* pb 240px = 190px overlap + 50px respiro */
+  .container { padding: 0 40px; }
+
   .grid {
-    flex-direction: column;
-    gap: 48px;
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
   }
 
   .imageCol {
-    flex: none;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
+    flex: 0 0 340px;
+    margin: 0;
+    max-width: 340px;
   }
-}
 
-@media (max-width: 768px) {
-  .section { padding: 72px 0; }
-  .container { padding: 0 24px; }
-  .title { font-size: 36px; }
-}
+  .photoWrap {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  }
 
-@media (max-width: 480px) {
-  .section { padding: 56px 0; }
-  .container { padding: 0 20px; }
+  .title { font-size: 48px; letter-spacing: -1px; line-height: 1; }
+  .titleLine { margin-bottom: 28px; }
+  .missao  { margin-bottom: 36px; }
+  .diferencialList { margin-bottom: 32px; }
+  .diferencialItem { padding: 20px 0; gap: 20px; }
 }

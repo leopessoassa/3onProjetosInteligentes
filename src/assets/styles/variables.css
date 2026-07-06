@@ -36,6 +36,8 @@
   --entry-cta-b2b-bg:   rgba(212, 168, 67, 0.15);
   --entry-cta-b2c:      #59ab66;   /* verde B2C — card "Sou Cliente" */
   --entry-cta-b2c-bg:   rgba(89, 171, 102, 0.15);
+  --entry-cta-iot:      #00a8e8;   /* azul elétrico IoT — card "Sou Empresa" */
+  --entry-cta-iot-bg:   rgba(0, 168, 232, 0.15);
 
   /* ── B2B palette (parceiros — azul petróleo) ───────────────────────────── */
   /* Mantidas para compatibilidade — usadas apenas no site parceiros */

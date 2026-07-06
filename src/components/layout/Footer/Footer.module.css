@@ -1,12 +1,42 @@
-/* ===== Footer ===== */
+/* ══════════════════════════════════════════════════════
+   Footer — mobile-first
+   ══════════════════════════════════════════════════════ */
+
 .footer {
   background: var(--entry-bg-deep, #1c1c1e);
   position: relative;
 }
 
-/* ===== Corpo principal ===== */
+/* ── Triângulo de entrada (ContactSection claro → Footer escuro) ── */
+.footerTriangle {
+  position: relative;
+  height: 40px;          /* mobile: triângulo pequeno */
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.imageBg {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: #161618; /* tom ligeiramente mais escuro que #1c1c1e */
+  clip-path: polygon(0% 40px, 55% 0%, 100% 40px, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 40px, 55% 0%, 100% 40px, 100% 100%, 0% 100%);
+}
+
+.triangleOverlay {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  clip-path: polygon(55% 0%, 100% 40px, 100% 0%);
+  -webkit-clip-path: polygon(55% 0%, 100% 40px, 100% 0%);
+  background: rgba(200, 169, 110, 0.08); /* toque âmbar sutil */
+}
+
+/* ── Corpo — mobile: coluna única ────────────────────── */
 .body {
-  padding: 80px 0 72px;
+  padding: 48px 0 44px;
   border-top: 1px solid var(--entry-border, rgba(255, 255, 255, 0.10));
 }
 
@@ -18,53 +48,53 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
-/* ===== Coluna 1 — Identidade ===== */
+/* ── Coluna 1 — Identidade ───────────────────────────── */
 .colIdentidade {
-  padding-right: 24px;
+  padding-right: 0;
 }
 
 .eyebrow {
   font-family: 'Catamaran', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--entry-accent, #c8a96e);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
 .brand {
   font-family: 'Catamaran', sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 900;
   color: #fff;
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   letter-spacing: -0.5px;
   line-height: 1;
 }
 
 .brandLine {
-  width: 32px;
+  width: 28px;
   height: 2px;
   background: var(--entry-accent, #c8a96e);
   opacity: 0.5;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .brandDesc {
   font-size: 14px;
   color: var(--entry-text-secondary, rgba(255, 255, 255, 0.72));
   line-height: 1.7;
-  margin: 0 0 16px;
+  margin: 0 0 12px;
 }
 
 .credenciais {
   font-family: 'Catamaran', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -72,16 +102,16 @@
   margin: 0;
 }
 
-/* ===== Colunas 2 e 3 ===== */
+/* ── Colunas 2 e 3 ───────────────────────────────────── */
 .colLabel {
   font-family: 'Catamaran', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--entry-text-muted, rgba(255, 255, 255, 0.45));
-  margin: 0 0 20px;
-  padding-bottom: 14px;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--entry-border, rgba(255, 255, 255, 0.10));
 }
 
@@ -101,18 +131,15 @@
   transition: color 0.2s;
 }
 
-.navLink:hover {
-  color: var(--entry-accent, #c8a96e);
-}
+.navLink:hover { color: var(--entry-accent, #c8a96e); }
 
-/* ===== Coluna Contato ===== */
+/* ── Coluna Contato ──────────────────────────────────── */
 .contatoList {
   list-style: none;
   padding: 0;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   display: flex;
   flex-direction: column;
-  gap: 0;
   border-top: 1px solid var(--entry-border, rgba(255, 255, 255, 0.10));
 }
 
@@ -121,15 +148,13 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 12px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--entry-border, rgba(255, 255, 255, 0.10));
   text-decoration: none;
   transition: opacity 0.2s;
 }
 
-a.contatoLink:hover {
-  opacity: 0.7;
-}
+a.contatoLink:hover { opacity: 0.7; }
 
 .contatoLabel {
   font-family: 'Catamaran', sans-serif;
@@ -140,10 +165,7 @@ a.contatoLink:hover {
   color: var(--entry-text-muted, rgba(255, 255, 255, 0.45));
 }
 
-.contatoValue {
-  font-size: 14px;
-  color: #fff;
-}
+.contatoValue { font-size: 14px; color: #fff; }
 
 /* Redes sociais */
 .social {
@@ -158,20 +180,20 @@ a.contatoLink:hover {
   transition: color 0.2s;
 }
 
-.socialLink:hover {
-  color: var(--entry-accent, #c8a96e);
-}
+.socialLink:hover { color: var(--entry-accent, #c8a96e); }
 
-/* ===== Rodapé ===== */
+/* ── Rodapé ──────────────────────────────────────────── */
 .bottom {
   border-top: 1px solid var(--entry-border, rgba(255, 255, 255, 0.10));
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .bottomInner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
+  text-align: center;
 }
 
 .copyright {
@@ -191,19 +213,74 @@ a.contatoLink:hover {
   transition: color 0.2s;
 }
 
-.bottomBrand:hover {
-  color: var(--entry-accent, #c8a96e);
+.bottomBrand:hover { color: var(--entry-accent, #c8a96e); }
+
+/* ══════════════════════════════════════════════════════
+   Tablet (600px+) — 2 colunas
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  /* Identidade ocupa linha inteira */
+  .colIdentidade {
+    grid-column: 1 / -1;
+  }
+
+  .bottomInner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 991px) {
-  .grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .colIdentidade { grid-column: 1 / -1; padding-right: 0; max-width: 480px; }
+/* ══════════════════════════════════════════════════════
+   Desktop (992px+) — 3 colunas
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 992px) {
+  .body { padding: 80px 0 72px; }
+
+  .grid {
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 48px;
+  }
+
+  .colIdentidade {
+    grid-column: auto;
+    padding-right: 24px;
+  }
+
+  .brand      { font-size: 28px; }
+  .eyebrow    { font-size: 11px; }
+  .colLabel   { font-size: 11px; margin-bottom: 20px; padding-bottom: 14px; }
+  .credenciais { font-size: 11px; }
 }
 
-@media (max-width: 600px) {
-  .body { padding: 56px 0 48px; }
-  .grid { grid-template-columns: 1fr; gap: 36px; }
-  .colIdentidade { grid-column: auto; max-width: 100%; }
-  .bottomInner { flex-direction: column; gap: 8px; text-align: center; }
+/* ── Triângulo do footer — responsivo ───────────────── */
+@media (min-width: 768px) {
+  .footerTriangle { height: 80px; }
+
+  .imageBg {
+    clip-path: polygon(0% 80px, 55% 0%, 100% 80px, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 80px, 55% 0%, 100% 80px, 100% 100%, 0% 100%);
+  }
+  .triangleOverlay {
+    clip-path: polygon(55% 0%, 100% 80px, 100% 0%);
+    -webkit-clip-path: polygon(55% 0%, 100% 80px, 100% 0%);
+  }
+}
+
+@media (min-width: 992px) {
+  .footerTriangle { height: 120px; }
+
+  .imageBg {
+    clip-path: polygon(0% 120px, 60% 0%, 100% 120px, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 120px, 60% 0%, 100% 120px, 100% 100%, 0% 100%);
+  }
+  .triangleOverlay {
+    clip-path: polygon(60% 0%, 100% 120px, 100% 0%);
+    -webkit-clip-path: polygon(60% 0%, 100% 120px, 100% 0%);
+  }
 }

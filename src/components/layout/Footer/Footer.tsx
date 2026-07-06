@@ -6,8 +6,9 @@ const navLinks = [
   { label: 'Sobre',        href: '/#sobre' },
   { label: 'Projetos',     href: '/#cases' },
   { label: 'Contato',      href: '/#contato' },
-  { label: 'Para Clientes ↗', href: 'https://casainteligente.leopessoa.eng.br' },
-  { label: 'Para Parceiros ↗', href: 'https://parceiros.leopessoa.eng.br' },
+  { label: 'Para Clientes ↗',   href: 'https://casainteligente.leopessoa.eng.br' },
+  { label: 'KPRemote IoT ↗',    href: 'https://iot.leopessoa.eng.br' },
+  { label: 'Para Parceiros ↗',  href: 'https://parceiros.leopessoa.eng.br' },
 ];
 
 
@@ -16,6 +17,12 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
+
+      {/* Triângulo de transição ContactSection (claro) → Footer (escuro) */}
+      <div className={styles.footerTriangle} aria-hidden="true">
+        <div className={styles.triangleOverlay} />
+        <div className={styles.imageBg} />
+      </div>
 
       {/* ── Corpo principal ── */}
       <div className={styles.body}>

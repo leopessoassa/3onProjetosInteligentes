@@ -11,6 +11,12 @@ export const navItems: NavItem[] = [
     isClientLink: true,
   },
   {
+    label: 'KPRemote IoT',
+    href: 'https://iot.leopessoa.eng.br',
+    isExternal: true,
+    isIotLink: true,
+  },
+  {
     label: 'Para Parceiros',
     href: 'https://parceiros.leopessoa.eng.br',
     isExternal: true,

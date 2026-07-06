@@ -154,3 +154,78 @@
   padding: 12px 22px !important;
   border-radius: 2px !important;
 }
+
+/* ─── "KPRemote IoT ↗" — sublinhado azul elétrico ────── */
+.iotItem {
+  position: relative;
+  padding-left: 16px !important;
+  margin-left: 4px !important;
+}
+
+/* Traço vertical sutil antes do link */
+.iotItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.iotLink {
+  display: inline-block !important;
+  color: var(--entry-cta-iot, #00a8e8) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 168, 232, 0.4) !important;
+  padding-bottom: 2px !important;
+  transition: color 0.2s ease, border-color 0.2s ease !important;
+  white-space: nowrap;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+}
+
+.iotLink:hover {
+  color: #fff !important;
+  border-bottom-color: var(--entry-cta-iot, #00a8e8) !important;
+}
+
+/* No sticky header (fundo claro) */
+:global(.fixed-header) .iotLink {
+  color: var(--entry-cta-iot, #00a8e8) !important;
+  border-bottom-color: rgba(0, 168, 232, 0.5) !important;
+}
+
+:global(.fixed-header) .iotLink:hover {
+  color: #007fbf !important;
+  border-bottom-color: #007fbf !important;
+}
+
+:global(.fixed-header) .iotItem::before {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile */
+:global(.mobile-menu) .iotItem {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+:global(.mobile-menu) .iotItem::before {
+  display: none;
+}
+
+:global(.mobile-menu) .iotLink {
+  display: block !important;
+  padding: 10px 20px 10px !important;
+  border-bottom: none !important;
+  border-left: 2px solid rgba(0, 168, 232, 0.45) !important;
+  margin: 4px 20px !important;
+  color: var(--entry-cta-iot, #00a8e8) !important;
+}

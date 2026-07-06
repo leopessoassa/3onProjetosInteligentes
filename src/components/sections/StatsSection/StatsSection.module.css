@@ -1,42 +1,97 @@
+/* ══════════════════════════════════════════════════════
+   StatsSection — mobile-first
+   Fundo: CLARO (#f4f4f2)
+   Transição: Hero escuro (#1c1c1e) → Stats claro (#f4f4f2)
+   ══════════════════════════════════════════════════════ */
+
+/* ── Seção com triângulo ─────────────────────────────── */
+.section {
+  position: relative;
+  margin-top: -40px;
+  padding-top: 40px;
+  z-index: 2;
+}
+
+/* Fundo claro começa abaixo dos triângulos */
+.section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100%;
+  height: calc(100% - 40px);
+  background-color: #f4f4f2;
+  z-index: -1;
+}
+
+/* ── Background layers ───────────────────────────────── */
+.backgroundLayers {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+/* Triângulo claro — sobe sobre o Hero escuro */
+.imageBg {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: #e8e6e2;   /* tom levemente mais escuro que #f4f4f2 */
+  clip-path: polygon(0% 40px, 55% 0%, 100% 40px, 100% 100%, 50% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 40px, 55% 0%, 100% 40px, 100% 100%, 50% 100%, 0% 100%);
+}
+
+/* Triângulo decorativo — toque âmbar sutil */
+.triangleOverlay {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  clip-path: polygon(55% 0%, 100% 40px, 100% 0%);
+  -webkit-clip-path: polygon(55% 0%, 100% 40px, 100% 0%);
+  background: rgba(200, 169, 110, 0.12);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Barra de stats ──────────────────────────────────── */
 .bar {
-  background: #f4f4f2;
-  padding: 48px 0;
+  background: transparent;
+  padding: 36px 0 80px;  /* pb 80px = 40px overlap da próxima + 40px respiro */
   border-bottom: 1px solid #e8e6e2;
 }
 
+/* Mobile: coluna centralizada */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0;
+  gap: 28px;
 }
 
 .item {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex: 1;
-  justify-content: center;
-  padding: 0 32px;
+  gap: 16px;
+  width: 100%;
+  max-width: 280px;
+  justify-content: flex-start;
 }
 
-.sep {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 48px;
-  background: #d0cdc8;
-}
+.sep { display: none; }
 
 .stat {
   font-family: 'Catamaran', sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 900;
   color: var(--entry-accent, #c8a96e);
   letter-spacing: -2px;
@@ -52,7 +107,7 @@
 
 .desc {
   font-family: 'Catamaran', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.2;
@@ -65,24 +120,68 @@
   line-height: 1.3;
 }
 
-/* ── Responsivo ── */
-@media (max-width: 768px) {
+/* ══════════════════════════════════════════════════════
+   Tablet (768px+) — linha com separadores + triângulos maiores
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .section { margin-top: -80px; padding-top: 80px; }
+  .section::before { top: 80px; height: calc(100% - 80px); }
+
+  .imageBg {
+    clip-path: polygon(0% 80px, 55% 20px, 100% 80px, 100% 100%, 50% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 80px, 55% 20px, 100% 80px, 100% 100%, 50% 100%, 0% 100%);
+  }
+  .triangleOverlay {
+    clip-path: polygon(55% 20px, 100% 80px, 100% 0%);
+    -webkit-clip-path: polygon(55% 20px, 100% 80px, 100% 0%);
+  }
+
+  .bar { padding: 44px 0 120px; }  /* pb 120px = 80px overlap + 40px respiro */
+
   .container {
-    flex-direction: column;
-    gap: 32px;
-    padding: 0 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0 40px;
   }
 
   .item {
-    padding: 0;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 280px;
+    flex: 1;
+    justify-content: center;
+    padding: 0 32px;
+    max-width: none;
+    width: auto;
   }
 
   .sep {
-    display: none;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 48px;
+    background: #d0cdc8;
   }
 
-  .stat { font-size: 40px; }
+  .stat { font-size: 48px; }
+  .desc { font-size: 15px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   Desktop (992px+) — triângulos cheios
+   ══════════════════════════════════════════════════════ */
+@media (min-width: 992px) {
+  .section { margin-top: -190px; padding-top: 190px; }
+  .section::before { top: 120px; height: calc(100% - 120px); }
+
+  .imageBg {
+    clip-path: polygon(0% 120px, 60% 60px, 100% 120px, 100% 100%, 50% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 120px, 60% 60px, 100% 120px, 100% 100%, 50% 100%, 0% 100%);
+  }
+  .triangleOverlay {
+    clip-path: polygon(60% 60px, 100% 0%, 100% 120px);
+    -webkit-clip-path: polygon(60% 60px, 100% 0%, 100% 120px);
+  }
 }

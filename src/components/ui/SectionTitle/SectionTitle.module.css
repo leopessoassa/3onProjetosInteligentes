@@ -1,11 +1,16 @@
+/* ══════════════════════════════════════════════════════
+   SectionTitle — mobile-first
+   Base: 28px → tablet 36px → desktop 48px
+   ══════════════════════════════════════════════════════ */
+
 .sectionTitle {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .sectionTitle h2 {
   position: relative;
   display: block;
-  font-size: 60px;
+  font-size: 28px;        /* mobile base */
   line-height: 1.2em;
   font-weight: 800;
   text-transform: uppercase;
@@ -13,41 +18,34 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 768px) {
-  .sectionTitle h2 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sectionTitle h2 {
-    font-size: 30px;
-  }
-}
-
 .sectionTitle p {
   position: relative;
-  margin-top: 24px;
-  font-size: 16px;
+  margin-top: 16px;
+  font-size: 15px;
   color: #777;
+  line-height: 1.7;
 }
 
-.light h2 {
-  color: #ffffff;
+.light h2 { color: #ffffff; }
+.light p  { color: rgba(255, 255, 255, 0.8); }
+
+.left   { text-align: left; }
+.center { text-align: center; }
+.right  { text-align: right; }
+
+/* Tablet (480px+) */
+@media (min-width: 480px) {
+  .sectionTitle h2 { font-size: 34px; }
 }
 
-.light p {
-  color: rgba(255, 255, 255, 0.8);
+/* Desktop (768px+) */
+@media (min-width: 768px) {
+  .sectionTitle    { margin-bottom: 36px; }
+  .sectionTitle h2 { font-size: 48px; }
+  .sectionTitle p  { font-size: 16px; margin-top: 20px; }
 }
 
-.left {
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
+/* Desktop largo (992px+) */
+@media (min-width: 992px) {
+  .sectionTitle h2 { font-size: 56px; }
 }
