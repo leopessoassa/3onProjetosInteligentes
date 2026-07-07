@@ -29,7 +29,7 @@ export default function AboutSimpleSection() {
           <div className={styles.imageCol}>
             <div className={styles.photoWrap}>
               <img
-                src="/images/leonardo-pessoa.webp"
+                src="/public/images/leonardo-pessoa.webp"
                 alt="Leonardo Pessoa — Engenheiro Eletricista"
                 className={styles.photo}
                 loading="lazy"
