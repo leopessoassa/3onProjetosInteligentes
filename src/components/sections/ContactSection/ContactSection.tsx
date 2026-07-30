@@ -5,12 +5,9 @@ import { whatsappUrl, whatsappBaseUrl, WHATSAPP_DISPLAY } from '@/utils/whatsapp
 import styles from './ContactSection.module.css';
 import emailjs from '@emailjs/browser';
 
-// Inicializa uma única vez por módulo — evita repassar a chave em cada envio
-emailjs.init({ publicKey: 'Hm7UaQdaVhNY7XQyc' });
-
-const EMAILJS_SITE = 'Principal';
-const EMAILJS_SERVICE_ID = 'service_1ehb865';
-const EMAILJS_TEMPLATE_ID = 'template_ldhbw1b';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_SITE = import.meta.env.VITE_EMAILJS_SITE as string;
 
 const contatos = [
   { label: 'WhatsApp', value: WHATSAPP_DISPLAY, isWhatsapp: true },
