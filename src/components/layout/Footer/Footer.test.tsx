@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import Footer from './Footer';
 
 function renderFooter() {
@@ -12,61 +12,60 @@ function renderFooter() {
 }
 
 describe('Footer', () => {
-  it('renders 3 columns with correct titles', () => {
+  it('renders brand identity', () => {
     renderFooter();
-    expect(screen.getByText('INGENIOUS')).toBeInTheDocument();
-    expect(screen.getByText('LATEST POSTS')).toBeInTheDocument();
-    expect(screen.getByText('OUR CONTACTS')).toBeInTheDocument();
+    expect(screen.getByText('Engenheiro · Parceiro Técnico')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Leo Pessoa' })).toBeInTheDocument();
+    expect(screen.getByText(/Automação residencial e projetos elétricos/i)).toBeInTheDocument();
+    expect(screen.getByText(/CREA-PB · MBA FGV/i)).toBeInTheDocument();
   });
 
-  it('renders about column text content', () => {
-    renderFooter();
-    expect(screen.getByText(/Etiam id scelerisque est/i)).toBeInTheDocument();
+  it('renders column labels', () => {
+    const { container } = renderFooter();
+    const labels = container.querySelectorAll('._colLabel_ab0a49, [class*="colLabel"]');
+    const labelTexts = Array.from(labels).map((el) => el.textContent);
+    expect(labelTexts).toContain('Navegação');
+    expect(labelTexts).toContain('Contato');
   });
 
-  it('renders latest posts column with a post', () => {
+  it('renders navigation links', () => {
     renderFooter();
-    expect(screen.getByText('Magna arcu')).toBeInTheDocument();
-    expect(screen.getByText('Alarm')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Sobre' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Projetos' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Para Clientes ↗' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Para Parceiros ↗' })).toBeInTheDocument();
   });
 
-  it('renders contact email and phone', () => {
+  it('renders contact info', () => {
     renderFooter();
-    expect(screen.getByText('Ingenious@gmail.com')).toBeInTheDocument();
-    expect(screen.getByText('(+123) 456 - 7890')).toBeInTheDocument();
+    expect(screen.getByText('(83) 98207-8702')).toBeInTheDocument();
+    expect(screen.getByText('contato@leopessoa.eng.br')).toBeInTheDocument();
+    expect(screen.getByText('João Pessoa — PB')).toBeInTheDocument();
   });
 
   it('renders social media links with aria-labels', () => {
     renderFooter();
-    expect(screen.getByRole('link', { name: /facebook/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /twitter/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /instagram/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /linkedin/i })).toBeInTheDocument();
+    // getAllByRole porque WhatsApp aparece também no contato
+    const instagramLinks = screen.getAllByRole('link', { name: /instagram/i });
+    expect(instagramLinks.length).toBeGreaterThanOrEqual(1);
+    const whatsappLinks = screen.getAllByRole('link', { name: /whatsapp/i });
+    expect(whatsappLinks.length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders social media icons with correct FontAwesome classes', () => {
     const { container } = renderFooter();
-    expect(container.querySelector('.fa-facebook-f')).toBeInTheDocument();
-    expect(container.querySelector('.fa-twitter')).toBeInTheDocument();
     expect(container.querySelector('.fa-instagram')).toBeInTheDocument();
-    expect(container.querySelector('.fa-linkedin-in')).toBeInTheDocument();
+    expect(container.querySelector('.fa-whatsapp')).toBeInTheDocument();
   });
 
-  it('renders copyright bar with correct text', () => {
+  it('renders copyright bar with current year', () => {
     renderFooter();
-    expect(screen.getByText(/Smart Home Automation WordPress Theme/i)).toBeInTheDocument();
-    expect(screen.getByText('Ingenious')).toBeInTheDocument();
+    const year = new Date().getFullYear().toString();
+    expect(screen.getByText(new RegExp(`© ${year}`))).toBeInTheDocument();
   });
 
-  it('renders footer-bottom element', () => {
-    const { container } = renderFooter();
-    expect(container.querySelector('.footer-bottom')).toBeInTheDocument();
-  });
-
-  it('renders post thumbnail image with alt text', () => {
-    const { container } = renderFooter();
-    const img = container.querySelector('.thumb img') as HTMLImageElement;
-    expect(img).toBeInTheDocument();
-    expect(img.getAttribute('alt')).not.toBe('');
+  it('renders domain brand in footer bottom', () => {
+    renderFooter();
+    expect(screen.getByText('leopessoa.eng.br')).toBeInTheDocument();
   });
 });

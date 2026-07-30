@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leopessoa.eng.br/sitemap.xml

@@ -5,19 +5,20 @@ import ProjectsSection from './ProjectsSection';
 describe('ProjectsSection', () => {
   it('renders the section title', () => {
     render(<ProjectsSection />);
-    expect(screen.getByText(/TRANSFORMAÇÕES REAIS/i)).toBeInTheDocument();
+    expect(screen.getByText(/CASES REAIS/i)).toBeInTheDocument();
   });
 
-  it('renders the featured card', () => {
+  it('renders the featured project', () => {
     render(<ProjectsSection />);
-    expect(screen.getByText('Apartamento Inteligente')).toBeInTheDocument();
+    expect(screen.getByText('Condomínio Ville Cristal')).toBeInTheDocument();
+    expect(screen.getByText('Gravatá — PE')).toBeInTheDocument();
   });
 
-  it('renders all 3 side cards', () => {
+  it('renders all 3 projects', () => {
     render(<ProjectsSection />);
-    expect(screen.getByText('Crianças Dormem Melhor')).toBeInTheDocument();
-    expect(screen.getByText('Envelhecer com Segurança')).toBeInTheDocument();
-    expect(screen.getByText('Ambiente Previsível')).toBeInTheDocument();
+    expect(screen.getByText('Condomínio Ville Cristal')).toBeInTheDocument();
+    expect(screen.getByText('Condomínio Alphaville Paraíba')).toBeInTheDocument();
+    expect(screen.getByText('Apartamento 3 quartos')).toBeInTheDocument();
   });
 
   it('renders all images with non-empty alt attributes', () => {
@@ -31,14 +32,13 @@ describe('ProjectsSection', () => {
 
   it('renders the CTA button', () => {
     render(<ProjectsSection />);
-    expect(screen.getByText(/Agendar Consulta Gratuita/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fale com Leo Pessoa/i)).toBeInTheDocument();
   });
 
-  it('renders all quotes', () => {
+  it('renders the results block', () => {
     render(<ProjectsSection />);
-    expect(screen.getByText(/fácil para minha mãe usar/i)).toBeInTheDocument();
-    expect(screen.getByText(/dorme 8h direto/i)).toBeInTheDocument();
-    expect(screen.getByText(/controlar tudo da cama/i)).toBeInTheDocument();
-    expect(screen.getByText(/Transformou nossa rotina/i)).toBeInTheDocument();
+    expect(screen.getByText(/O que esses projetos geraram/i)).toBeInTheDocument();
+    expect(screen.getByText(/\+30%/i)).toBeInTheDocument();
+    expect(screen.getByText(/Valorização patrimonial/i)).toBeInTheDocument();
   });
 });

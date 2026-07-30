@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 export function useStickyHeader(): boolean {
-  const [isSticky, setIsSticky] = useState<boolean>(window.scrollY > 100);
+  // Inicializa com false para compatibilidade SSR — window não existe no servidor
+  const [isSticky, setIsSticky] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,5 +1,11 @@
 const WHATSAPP_PHONE = '5583982078702';
 
+/** Detecta mobile com guard SSR — retorna false no servidor */
+function isMobileDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 /**
  * Gera a URL correta para abrir o WhatsApp com mensagem pré-preenchida.
  * - Mobile (Android/iPhone): usa o scheme `whatsapp://` para abrir o app direto.
@@ -10,8 +16,7 @@ const WHATSAPP_PHONE = '5583982078702';
  */
 export function whatsappUrl(message: string): string {
   const text = encodeURIComponent(message);
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  return isMobile
+  return isMobileDevice()
     ? `whatsapp://send?phone=${WHATSAPP_PHONE}&text=${text}`
     : `https://wa.me/${WHATSAPP_PHONE}?text=${text}`;
 }
@@ -21,11 +26,10 @@ export function whatsappUrl(message: string): string {
  * - Mobile: abre o app via scheme nativo.
  * - Desktop: abre o WhatsApp Web.
  *
- * Deve ser chamada dentro de componentes React.
+ * Compatível com SSR — retorna a URL `wa.me` quando navigator não existe.
  */
 export function whatsappBaseUrl(): string {
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  return isMobile
+  return isMobileDevice()
     ? `whatsapp://send?phone=${WHATSAPP_PHONE}`
     : `https://wa.me/${WHATSAPP_PHONE}`;
 }
